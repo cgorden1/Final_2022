@@ -47,9 +47,15 @@ basicC + geom_bar(stat="identity",position="dodge")
 basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
+This barplot shows us that about 68% of people who took the placebo contracted COVID19 while about 32% of people who had the vaccine got COVID19. The vaccine seems to be more reliable than the placebo even tho some people on the vaccine caught covid. 
 
 ##Numerical 
-
+```{r}
+table1 <- xtabs(~infected + treatment, data=M)
+rowPerc(table1)
+colPerc(table1)
+```
+This numerical result shows us that 68.44% of the placebo users caught COVID19 and 31.56% of vaccinated people caught COVID19 which means that a majority of vaccinated men are protected by the vaccination. 
 
 ##Inferential
 
