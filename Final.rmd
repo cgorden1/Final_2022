@@ -58,7 +58,13 @@ colPerc(table1)
 This numerical result shows us that 68.44% of the placebo users caught COVID19 and 31.56% of vaccinated people caught COVID19 which means that a majority of vaccinated men are protected by the vaccination. 
 
 ##Inferential
-
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+Mfish <- fisher.test(table1)
+Mfish
+```
+The inferential test shows us that there is a 95% confidence level and that interval is 1.732 for the placebo. 2.752 for the vaccines interval and the odds ratio is 2.178 the p value = 2.364e-12. 
 
 
 ## Females
