@@ -101,10 +101,13 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 In this bar graph we can see that 58% of the women who took the vaccine got sick and 43% of women who took the placebo got sick. This means that the vaccine makes the women more likely to get sick. 
 
 ##Numerical
+```{r}
+table1 <- xtabs(~infected + treatment, data=F)
+rowPerc(table1)
+colPerc(table1)
+```
 
-
-
-
+Through looking at this numerical data we can see that 57 out of 100 women got COVID19 while 43 of the women who took the placebo got sick. 
 ##Inferential
 
 
