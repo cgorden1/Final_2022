@@ -66,8 +66,47 @@ Mfish
 ```
 The inferential test shows us that there is a 95% confidence level and that interval is 1.732 for the placebo. 2.752 for the vaccines interval and the odds ratio is 2.178 the p value = 2.364e-12. 
 
+```{r}
+effect <- Mfish$p.value/(Mfish$p.value +1)
+effectivenessM = Mfish$estimate/(Mfish$estimate +1)*100
+print(effectivenessM)
+```
+The odds ratio is 16.53436 of the effectiveness on males. 
+```{r}
+low=(Mfish$conf.int[1]/(Mfish$conf.int[1] +1))*100
+hi=(Mfish$conf.int[2]/(Mfish$conf.int[2] +1))*100
+options(digits=2)
+```
 
+The high is 73.348 and the low is 63.402.
 ## Females
+
+
+##Graphical
+```{r}
+dd2 <- F %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+
+##Numerical
+
+
+
+
+##Inferential
+
+
 
 
 ## LGBTQ
