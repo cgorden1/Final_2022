@@ -117,7 +117,19 @@ Ffish
 ```
 The inferential test shows us that there is a 95% confidence level and that interval is 0.60 for the placebo. 0.92 for the vaccines interval and the odds ratio is 0.7e the p value = 0.005 
 
+```{r}
+effect <- Ffish$p.value/(Ffish$p.value +1)
+effectivenessF = Ffish$estimate/(Ffish$estimate +1)*100
+print(effectivenessF)
+```
+The odds ratio is 43 of the effectiveness on females. 
 
+```{r}
+low=(Ffish$conf.int[1]/(Ffish$conf.int[1] +1))*100
+hi=(Ffish$conf.int[2]/(Ffish$conf.int[2] +1))*100
+options(digits=2)
+```
+The high is 47.858 and the low is 37.337.
 
 ## LGBTQ
 
