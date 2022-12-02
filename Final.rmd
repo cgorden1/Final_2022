@@ -109,7 +109,13 @@ colPerc(table1)
 
 Through looking at this numerical data we can see that 57 out of 100 women got COVID19 while 43 of the women who took the placebo got sick. 
 ##Inferential
-
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+Ffish <- fisher.test(table1)
+Ffish
+```
+The inferential test shows us that there is a 95% confidence level and that interval is 0.60 for the placebo. 0.92 for the vaccines interval and the odds ratio is 0.7e the p value = 0.005 
 
 
 
