@@ -98,6 +98,7 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
+In this bar graph we can see that 58% of the women who took the vaccine got sick and 43% of women who took the placebo got sick. This means that the vaccine makes the women more likely to get sick. 
 
 ##Numerical
 
