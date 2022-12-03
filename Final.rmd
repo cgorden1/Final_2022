@@ -141,6 +141,8 @@ options(digits=2)
 The high is 47.858 and the low is 37.337.
 
 ## LGBTQ
+
+##Graphical
 ```{r}
 dd2 <- gay %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
@@ -195,6 +197,28 @@ options(digits=2)
 The high is 25.613 and the low is 6.201. 
 
 ## Druggies
+
+##Graphical
+
+```{r}
+dd2 <- Druguser %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+In this bar plot we can see that about 16% of drug users who took the placebo got sick while about 85% of drug users who took the vaccine got sick. This means that it is very likely that drug users who take the vaccine are more likely to get sick. 
+
+##Numerical
+
 
 
 # Overall Results and Conclusions
