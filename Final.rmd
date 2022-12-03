@@ -178,8 +178,21 @@ gayfish
 
 The inferential test shows us that there is a 95% confidence level and that interval is 0.066 for the placebo. 0.344 for the vaccines interval and the odds ratio is 0.16 the p value = 1e-08.
 
+```{r}
+effect <- gayfish$p.value/(gayfish$p.value +1)
+effectivenessgay = gayfish$estimate/(gayfish$estimate +1)*100
+print(effectivenessgay)
+```
 
+The odds ratio is 14 for the effectiveness on gays.
 
+```{r}
+low=(gayfish$conf.int[1]/(gayfish$conf.int[1] +1))*100
+hi=(gayfish$conf.int[2]/(gayfish$conf.int[2] +1))*100
+options(digits=2)
+```
+
+The high is 25.613 and the low is 6.201. 
 
 ## Druggies
 
