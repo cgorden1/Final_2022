@@ -238,6 +238,20 @@ Druguserfish
 
 The inferential test shows us that there is a 95% confidence level and that interval is 0.094 for the placebo. 0.418 for the vaccines interval and the odds ratio is 0.21 the p value = 3e-07.
 
+```{r}
+effect <- Druguserfish$p.value/(Druguserfish$p.value +1)
+effectivenessDruguser = Druguserfish$estimate/(Druguserfish$estimate +1)*100
+print(effectivenessDruguser)
+```
 
+The odds ratio is 17 for effectiveness on drug users.
+
+```{r}
+low=(Druguserfish$conf.int[1]/(Druguserfish$conf.int[1] +1))*100
+hi=(Druguserfish$conf.int[2]/(Druguserfish$conf.int[2] +1))*100
+options(digits=2)
+```
+
+The high is 29.473 and the low is 8.571.
 
 # Overall Results and Conclusions
