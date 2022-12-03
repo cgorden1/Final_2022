@@ -47,6 +47,7 @@ basicC + geom_bar(stat="identity",position="dodge")
 basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
+
 This barplot shows us that about 68% of people who took the placebo contracted COVID19 while about 32% of people who had the vaccine got COVID19. The vaccine seems to be more reliable than the placebo even tho some people on the vaccine caught covid. 
 
 ##Numerical 
@@ -55,6 +56,7 @@ table1 <- xtabs(~infected + treatment, data=M)
 rowPerc(table1)
 colPerc(table1)
 ```
+
 This numerical result shows us that 68.44% of the placebo users caught COVID19 and 31.56% of vaccinated people caught COVID19 which means that a majority of vaccinated men are protected by the vaccination. 
 
 ##Inferential
@@ -64,6 +66,7 @@ chisqtestGC(table1)
 Mfish <- fisher.test(table1)
 Mfish
 ```
+
 The inferential test shows us that there is a 95% confidence level and that interval is 1.732 for the placebo. 2.752 for the vaccines interval and the odds ratio is 2.178 the p value = 2.364e-12. 
 
 ```{r}
@@ -71,7 +74,9 @@ effect <- Mfish$p.value/(Mfish$p.value +1)
 effectivenessM = Mfish$estimate/(Mfish$estimate +1)*100
 print(effectivenessM)
 ```
+
 The odds ratio is 16.53436 of the effectiveness on males. 
+
 ```{r}
 low=(Mfish$conf.int[1]/(Mfish$conf.int[1] +1))*100
 hi=(Mfish$conf.int[2]/(Mfish$conf.int[2] +1))*100
@@ -79,6 +84,7 @@ options(digits=2)
 ```
 
 The high is 73.348 and the low is 63.402.
+
 ## Females
 
 
@@ -108,6 +114,7 @@ colPerc(table1)
 ```
 
 Through looking at this numerical data we can see that 57 out of 100 women got COVID19 while 43 of the women who took the placebo got sick. 
+
 ##Inferential
 ```{r}
 chisq.test(table1)
@@ -115,6 +122,7 @@ chisqtestGC(table1)
 Ffish <- fisher.test(table1)
 Ffish
 ```
+
 The inferential test shows us that there is a 95% confidence level and that interval is 0.60 for the placebo. 0.92 for the vaccines interval and the odds ratio is 0.7e the p value = 0.005 
 
 ```{r}
@@ -122,6 +130,7 @@ effect <- Ffish$p.value/(Ffish$p.value +1)
 effectivenessF = Ffish$estimate/(Ffish$estimate +1)*100
 print(effectivenessF)
 ```
+
 The odds ratio is 43 of the effectiveness on females. 
 
 ```{r}
@@ -146,10 +155,19 @@ basicC + geom_bar(stat="identity",position="dodge")
 basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
+
 Here we can see that about 16% of gays who took the placebo got sick while about 79% of gays who took the vaccine got sick. This estimation shows us that being having the vaccine and being gay makes you more likely to get sick.
 
 ##Numerical
+```{r}
+table1 <- xtabs(~infected + treatment, data=gay)
+rowPerc(table1)
+colPerc(table1)
+```
 
+In this numerical data we can see that 13 gay people who took the placebo got sick while 87 of the gay people who took the vaccine got sick. So far the data is showing that gay people who take the vaccine are more likely to get sick. 
+
+##Inferential
 
 ## Druggies
 
