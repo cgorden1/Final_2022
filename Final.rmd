@@ -48,7 +48,7 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-This barplot shows us that about 68% of people who took the placebo contracted COVID19 while about 32% of people who had the vaccine got COVID19. The vaccine seems to be more reliable than the placebo even tho some people on the vaccine caught covid. 
+This barplot shows us that about 68% of men who took the placebo contracted COVID19 while about 32% of mem who had the vaccine got COVID19. The vaccine seems to be more reliable than the placebo even tho some people on the vaccine caught covid. 
 
 ##Numerical 
 ```{r}
@@ -123,7 +123,7 @@ Ffish <- fisher.test(table1)
 Ffish
 ```
 
-The inferential test shows us that there is a 95% confidence level and that interval is 0.60 for the placebo. 0.92 for the vaccines interval and the odds ratio is 0.7e the p value = 0.005 
+The inferential test shows us that there is a 95% confidence level and that interval is 0.60 for the placebo. 0.92 for the vaccines interval and the odds ratio is 0.74 the p value = 0.005 
 
 ```{r}
 effect <- Ffish$p.value/(Ffish$p.value +1)
@@ -168,6 +168,18 @@ colPerc(table1)
 In this numerical data we can see that 13 gay people who took the placebo got sick while 87 of the gay people who took the vaccine got sick. So far the data is showing that gay people who take the vaccine are more likely to get sick. 
 
 ##Inferential
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+gayfish <- fisher.test(table1)
+gayfish
+```
+
+The inferential test shows us that there is a 95% confidence level and that interval is 0.066 for the placebo. 0.344 for the vaccines interval and the odds ratio is 0.16 the p value = 1e-08.
+
+
+
 
 ## Druggies
 
