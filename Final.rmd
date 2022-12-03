@@ -229,5 +229,15 @@ In this numerical data we can see that only 17 drug users who took the placebo g
 
 ##Inferential
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+Druguserfish <- fisher.test(table1)
+Druguserfish
+```
+
+The inferential test shows us that there is a 95% confidence level and that interval is 0.094 for the placebo. 0.418 for the vaccines interval and the odds ratio is 0.21 the p value = 3e-07.
+
+
 
 # Overall Results and Conclusions
