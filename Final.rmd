@@ -132,7 +132,23 @@ options(digits=2)
 The high is 47.858 and the low is 37.337.
 
 ## LGBTQ
+```{r}
+dd2 <- gay %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+Here we can see that about 16% of gays who took the placebo got sick while about 79% of gays who took the vaccine got sick. This estimation shows us that being having the vaccine and being gay makes you more likely to get sick.
+
+##Numerical
 
 
 ## Druggies
