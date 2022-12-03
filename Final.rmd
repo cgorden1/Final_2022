@@ -219,6 +219,15 @@ In this bar plot we can see that about 16% of drug users who took the placebo go
 
 ##Numerical
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=Druguser)
+rowPerc(table1)
+colPerc(table1)
+```
+
+In this numerical data we can see that only 17 drug users who took the placebo got sick when 83 of the drug users that took vaccines got sick. This numerical data is showing that is you are a drug user the vaccine wont work that well for you.
+
+##Inferential
 
 
 # Overall Results and Conclusions
