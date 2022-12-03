@@ -256,5 +256,5 @@ The high is 29.473 and the low is 8.571.
 
 # Overall Results and Conclusions
 
-By
+By looking at all the data for men, women, gays, and drug users, we can tell that the effectiveness varies among all the factors. The Men have the best effectiveness with the vaccine, more men got sick using the placebo than the vaccine. Women were pretty close between the placebo and vaccine but overall more women got sick with the vaccine than the placebo. The gays had very different results, they were the least effective with the vaccine. Very little got sick with the placebo but almost 7 times more got sick with the vaccine. Finally the drug users had very similar results with the gays but they had more effectiveness with the vaccine than them. Only 17 with the placebo got sick while the drug users who took the vaccine had almost 5 times more who got sick with the vaccine. The data shows us the vaccine is only really effective in a positive way with the men and the least effective with the gays. 
 
